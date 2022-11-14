@@ -1,16 +1,23 @@
 
-import  Book  from './Availablebooks'
-
+    class Book {
+    constructor(title, author, ISBN, numCopies) {
+      this.title = title;
+      this.author = author;
+      this.ISBN = ISBN;
+      this.numCopies = numCopies;
+    }
+   }
 class TechnicalBook extends Book {
-    constructor(edition) {
+    constructor(title, author, ISBN, numCopies,edition) {
+        super(title, author, ISBN, numCopies)
     this.edition = edition;
     }
 
     getEdition() {
-        `The current version of this book is ${edition}`
+      return  `The current version of this book is ${this.edition}`
     }
 }
 
-let mathBook = new TechnicalBook("Basic Math", "Professor Collins", 123919, 5).getEdition()
+let mathBook = new TechnicalBook("Basic Math", "Professor Collins", 123919, 5, '3')
 
-console.log(mathBook)
+console.log(mathBook.getEdition())
